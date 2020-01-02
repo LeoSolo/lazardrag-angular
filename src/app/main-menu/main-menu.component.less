@@ -1,0 +1,28 @@
+.main-menu-container {
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    li {
+      font-size: 1.1em;
+      margin-right: 14px;
+      font-weight: 500;
+      padding: 4px;
+      &:hover {
+        color: red;
+        cursor: pointer;
+      }
+      a {
+        &.active {
+          color: red;
+          pointer-events: none;
+          font-weight: 800;
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+}

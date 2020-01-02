@@ -1,0 +1,54 @@
+.main-header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: grey;
+  overflow: hidden;
+
+  .logo-container {
+    position: absolute;
+    height: 110px;
+    width: 280px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    img {
+      position: relative;
+      width: 110px;
+      height: 100%;
+    }
+    h1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .contacts-container {
+    position: absolute;
+    height: 180px;
+    width: 210px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    h4 {
+      margin: 10px 0;
+      font-size: 1.1em;
+      font-style: italic;
+    }
+    ul {
+      li {
+        font-size: .9em;
+        span {
+          font-weight: 800;
+          font-size: 1.1em;
+        }
+      }
+    }
+  }
+}

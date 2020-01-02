@@ -3,10 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MainHeaderComponent } from './main-header/main-header.component';
+import { MainMenuComponent } from './main-menu/main-menu.component';
+import { NewsComponent } from './news/news.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainHeaderComponent,
+    MainMenuComponent,
+    NewsComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
@@ -15,4 +23,5 @@ import { AppComponent } from './app.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
