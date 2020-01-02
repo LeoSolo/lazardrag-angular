@@ -1,9 +1,4 @@
-@minBodyFontSize: 13px;
-@mediumBodyFontSize: 17px;
-@maxBodyFontSize: 21px;
-
-@mainBg: #e4e4e4;
-@hoveredLink: #ff0000;
+@import './conts';
 
 * {
   box-sizing: border-box;
@@ -33,4 +28,13 @@ a {
     color: @hoveredLink;
     cursor: pointer;
   }
+}
+
+section {
+  position: relative;
+  width: 100%;
+}
+
+.page {
+  padding: @defaultPadding;
 }
