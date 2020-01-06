@@ -1,11 +1,11 @@
 <div class="main-menu-container">
 
-    <ul class="main-menu" [ngClass]="{'hidden': isAdminPage}">
+    <ul class="main-menu" *ngIf="!isAdminPage">
         <li>
             <a
-                [routerLink]="''"
-                routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact:true}"
+                    [routerLink]="''"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact:true}"
             >
                 Главная
             </a>
@@ -21,7 +21,7 @@
         </li>
     </ul>
 
-    <ul class="admin-menu" [ngClass]="{'shown': isAdminPage}">
+    <ul class="admin-menu" *ngIf="isAdminPage">
         <li>
             <a>Товары</a>
         </li>

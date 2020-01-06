@@ -1,4 +1,4 @@
-<div class="shadow-block" [ngClass]="{'hidden': !isAuthNeed}">
+<div class="shadow-block" *ngIf="!isAuthNeed">
     <div class="auth-container">
         <h2>Авторизация</h2>
 
