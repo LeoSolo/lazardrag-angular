@@ -3,13 +3,16 @@ import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {MainHeaderComponent} from './main-header/main-header.component';
-import {MainMenuComponent} from './main-menu/main-menu.component';
-import {NewsComponent} from './news/news.component';
+import {MainHeaderComponent} from './common/main-header/main-header.component';
+import {MainMenuComponent} from './common/main-header/main-menu/main-menu.component';
+import {NewsComponent} from './news-page/news.component';
 import {MainPageComponent} from './main-page/main-page.component';
 import {RightPanelComponent} from './right-panel/right-panel.component';
-import {ShopComponent} from './shop/shop.component';
-import {AboutComponent} from './about/about.component';
+import {ShopComponent} from './shop-page/shop.component';
+import {AboutComponent} from './about-page/about.component';
+import {AdminPageComponent} from './admin-page/admin-page.component';
+import { AuthorizationComponent } from './common/authorization/authorization.component';
+import { LoaderComponent } from './common/loader/loader.component';
 
 @NgModule({
     declarations: [
@@ -20,7 +23,10 @@ import {AboutComponent} from './about/about.component';
         MainPageComponent,
         RightPanelComponent,
         ShopComponent,
-        AboutComponent
+        AboutComponent,
+        AdminPageComponent,
+        AuthorizationComponent,
+        LoaderComponent
     ],
     imports: [
         BrowserModule,

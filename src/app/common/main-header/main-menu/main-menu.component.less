@@ -1,9 +1,17 @@
-@import "../../conts";
+@import "../../../../conts";
 
 .main-menu-container {
   position: absolute;
   bottom: 0;
   left: @defaultPadding;
+
+  .admin-menu {
+    display: none;
+    &.shown {
+      display: flex;
+    }
+  }
+
   ul {
     display: flex;
     flex-direction: row;

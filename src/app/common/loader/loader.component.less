@@ -1,0 +1,22 @@
+.loader-icon {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 48px;
+  width: 48px;
+  color: #ffffff;
+  transform: translate(-50%, -50%) rotate(0);
+  background: url("../../../assets/icons/loader.svg") center center no-repeat;
+  background-size: cover;
+  animation: 1s spin linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

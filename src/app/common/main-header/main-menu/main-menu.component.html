@@ -1,5 +1,6 @@
 <div class="main-menu-container">
-    <ul>
+
+    <ul class="main-menu" [ngClass]="{'hidden': isAdminPage}">
         <li>
             <a
                 [routerLink]="''"
@@ -17,6 +18,18 @@
         </li>
         <li>
             <a [routerLink]="'/about'" routerLinkActive="active">О Нас</a>
+        </li>
+    </ul>
+
+    <ul class="admin-menu" [ngClass]="{'shown': isAdminPage}">
+        <li>
+            <a>Товары</a>
+        </li>
+        <li>
+            <a>Новости</a>
+        </li>
+        <li>
+            <a>Контент</a>
         </li>
     </ul>
 </div>
