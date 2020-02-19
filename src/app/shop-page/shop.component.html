@@ -1,1 +1,7 @@
-<p>shop works!</p>
+<ul class="products-list">
+  <li *ngFor="let product of products">
+    {{product.title}}
+    {{product.description}}
+    {{product.price}} $
+  </li>
+</ul>

@@ -10,19 +10,19 @@ using Models.Products;
 namespace backend.Controllers
 {
     [ApiController]
-    [Route("api")]
+    [Route("products")]
     public class ProductsController : ControllerBase
     {
-        private readonly IWebHostEnvironment _env;
-        public ProductsController(IWebHostEnvironment env){
-            _env = env;
+        public ProductsController()
+        {
         }
 
         [HttpGet]
         public Product[] Get()
         {
             return new []{
-                new Product(){
+                new Product()
+                {
                     Id = 101,
                     Title = "Product 1",
                     Description = "Description of product 1",
@@ -30,7 +30,8 @@ namespace backend.Controllers
                     Image = "",
                     Types = new []{1,2,3}
                 },
-                new Product(){
+                new Product()
+                {
                     Id = 102,
                     Title = "Product 2",
                     Description = "Description of product 2",
