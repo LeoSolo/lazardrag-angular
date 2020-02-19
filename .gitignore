@@ -44,3 +44,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Backend
+/backend/.vscode
+/backend/obj
+/backend/bin
