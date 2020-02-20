@@ -1,1 +1,11 @@
-<p>news works!</p>
+<app-loader *ngIf="loading"></app-loader>
+
+<ul class="news-list" *ngIf="news.length && !loading">
+  <li *ngFor="let post of news">
+    {{post.title}}
+    {{post.text}}
+  </li>
+</ul>
+
+<div *ngIf="!news.length && !loading">Новостей нет :(</div>
+

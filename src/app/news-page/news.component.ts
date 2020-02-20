@@ -1,15 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import {NewsService} from "../../services/news.service";
+import {INews} from "../../models/INews";
 
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
-  styleUrls: ['./news.component.less']
+  styleUrls: ['./news.component.less'],
+  providers: [NewsService]
 })
 export class NewsComponent implements OnInit {
 
-  constructor() { }
+  news: INews[] = [];
+  loading: boolean = true;
 
-  ngOnInit() {
+  constructor(private newsService: NewsService) { }
+
+  async ngOnInit() {
+    this.getNewsList();
+  }
+
+  async getNewsList() {
+    this.news = await this.newsService.getNews()
+      .then(res => {
+        this.loading = false;
+        return res;
+      });
   }
 
 }

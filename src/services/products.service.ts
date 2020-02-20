@@ -14,7 +14,7 @@ export class ProductsService {
     private apiHelper: ApiHelper
   ){}
 
-  async getProducts(): Promise<any> {   //TODO must be : Promise<IProduct[] but get error>
+  async getProducts(): Promise<IProduct[]> {
     return await this.apiHelper.getData('PRODUCTS')
       .then(response => response.json())
   }

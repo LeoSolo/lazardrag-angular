@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loader.component.less']
 })
 export class LoaderComponent implements OnInit {
-  isLoading = false;
 
   constructor() { }
 

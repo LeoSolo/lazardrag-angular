@@ -12,11 +12,20 @@ import {IProduct} from "../../models/IProduct";
 export class ShopComponent implements OnInit {
 
   products: IProduct[] = [];
+  loading: boolean = true;
 
   constructor(private productService: ProductsService) { }
 
   async ngOnInit() {
-    this.products = await this.productService.getProducts();
+    this.getProductsList();
+  }
+
+  async getProductsList() {
+    this.products = await this.productService.getProducts()
+      .then(res => {
+        this.loading = false;
+        return res;
+      });
   }
 
 }
