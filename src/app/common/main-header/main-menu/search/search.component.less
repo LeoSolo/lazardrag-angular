@@ -1,0 +1,40 @@
+@import "../../../../../conts";
+
+.search-container {
+  position: absolute;
+  right: 54px;
+  top: 0;
+  height: 100%;
+  width: 250px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+
+  input {
+    position: relative;
+    width: 100%;
+    height: 34px;
+    padding: 0 @defaultPadding;
+    outline-color: transparent;
+    border-radius: 3px;
+    font-size: .9em;
+    font-weight: 600;
+  }
+
+  .searchBtn {
+    display: block;
+    height: 34px;
+    width: 34px;
+    position: absolute;
+    opacity: .3;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url("~src/assets/icons/search.svg") center center no-repeat;
+    background-size: 60%;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

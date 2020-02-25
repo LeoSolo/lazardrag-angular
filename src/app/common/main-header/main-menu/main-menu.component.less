@@ -1,29 +1,46 @@
 @import "../../../../conts";
 
 .main-menu-container {
-  position: absolute;
-  bottom: 0;
-  left: @defaultPadding;
+  position: relative;
+  padding-left: 56px;
+  background: #333333;
 
   ul {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    align-items: center;
+    height: 60px;
     li {
-      font-size: 1.1em;
+      font-size: .9em;
       margin-right: 14px;
       font-weight: 500;
       padding: 4px;
+      height: 100%;
+
       &:hover {
+        a {
+          border-bottom: 2px solid red;
+        }
         color: red;
         cursor: pointer;
       }
+
       a {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-family: @appleFont;
+
         &.active {
           color: red;
           pointer-events: none;
-          font-weight: 800;
-          font-size: 1.2em;
+          font-weight: 600;
+          font-size: 1em;
+          border-bottom: 2px solid red;
         }
       }
     }
