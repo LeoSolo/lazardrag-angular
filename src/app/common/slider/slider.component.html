@@ -10,8 +10,8 @@
       </ng-container>
     </ng-container>
 
-    <i class="btn nextBtn arrowBtn" (click)="skip('next')"></i>
-    <i class="btn prevBtn arrowBtn" (click)="skip('prev')"></i>
+    <i class="btn nextBtn" (click)="skip('next')" (mouseover)="setPause()"></i>
+    <i class="btn prevBtn" (click)="skip('prev')" (mouseover)="setPause()"></i>
 
     <div class="pagination-container">
       <ng-container *ngFor="let slide of slides; let num = index;">

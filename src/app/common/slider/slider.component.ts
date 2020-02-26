@@ -15,7 +15,7 @@ export class SliderComponent implements OnInit {
   loading: boolean = true;
   delay: number = 3500;
   pause: boolean = false;
-  interval: any = null;
+  interval: number = null;
 
   constructor(private slidesService: SlidesService) {
   }

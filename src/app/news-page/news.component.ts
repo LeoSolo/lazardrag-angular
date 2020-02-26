@@ -8,6 +8,7 @@ import {INews} from "../../models/INews";
   styleUrls: ['./news.component.less'],
   providers: [NewsService]
 })
+
 export class NewsComponent implements OnInit {
 
   news: INews[] = [];

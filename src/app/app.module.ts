@@ -13,6 +13,8 @@ import {AboutComponent} from './about-page/about.component';
 import {AdminPageComponent} from './admin-page/admin-page.component';
 import { AuthorizationComponent } from './common/authorization/authorization.component';
 import { LoaderComponent } from './common/loader/loader.component';
+import { SliderComponent } from './common/slider/slider.component';
+import { SearchComponent } from './common/main-header/main-menu/search/search.component';
 
 @NgModule({
     declarations: [
@@ -26,7 +28,9 @@ import { LoaderComponent } from './common/loader/loader.component';
         AboutComponent,
         AdminPageComponent,
         AuthorizationComponent,
-        LoaderComponent
+        LoaderComponent,
+        SliderComponent,
+        SearchComponent
     ],
     imports: [
         BrowserModule,

@@ -6,7 +6,8 @@ export const URLS = {
   API: {
     API: 'http://localhost:5000/',
     PRODUCTS: 'products/',
-    NEWS: 'news/'
+    NEWS: 'news/',
+    SLIDES: 'slides/'
   }
 };
 
