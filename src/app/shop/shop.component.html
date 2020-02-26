@@ -1,0 +1,15 @@
+<div class="shop-container">
+  <app-left-panel></app-left-panel>
+
+  <app-loader *ngIf="loading"></app-loader>
+
+  <ul class="products-list" *ngIf="products.length && !loading">
+    <li *ngFor="let product of products">
+      {{product.title}}
+      {{product.description}}
+      {{product.price}} $
+    </li>
+  </ul>
+
+  <div *ngIf="!products.length && !loading">Товара нет :(</div>
+</div>

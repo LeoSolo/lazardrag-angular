@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {MainPageComponent} from './main-page/main-page.component';
 import {NewsComponent} from './news-page/news.component';
-import {ShopComponent} from './shop-page/shop.component';
+import {ShopComponent} from './shop/shop.component';
 import {AboutComponent} from './about-page/about.component';
 import {AdminPageComponent} from './admin-page/admin-page.component';
 

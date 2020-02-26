@@ -7,14 +7,14 @@ import {MainHeaderComponent} from './common/main-header/main-header.component';
 import {MainMenuComponent} from './common/main-header/main-menu/main-menu.component';
 import {NewsComponent} from './news-page/news.component';
 import {MainPageComponent} from './main-page/main-page.component';
-import {RightPanelComponent} from './right-panel/right-panel.component';
-import {ShopComponent} from './shop-page/shop.component';
+import {ShopComponent} from './shop/shop.component';
 import {AboutComponent} from './about-page/about.component';
 import {AdminPageComponent} from './admin-page/admin-page.component';
 import { AuthorizationComponent } from './common/authorization/authorization.component';
 import { LoaderComponent } from './common/loader/loader.component';
 import { SliderComponent } from './common/slider/slider.component';
 import { SearchComponent } from './common/main-header/main-menu/search/search.component';
+import { LeftPanelComponent } from './shop/left-panel/left-panel.component';
 
 @NgModule({
     declarations: [
@@ -23,14 +23,14 @@ import { SearchComponent } from './common/main-header/main-menu/search/search.co
         MainMenuComponent,
         NewsComponent,
         MainPageComponent,
-        RightPanelComponent,
         ShopComponent,
         AboutComponent,
         AdminPageComponent,
         AuthorizationComponent,
         LoaderComponent,
         SliderComponent,
-        SearchComponent
+        SearchComponent,
+        LeftPanelComponent
     ],
     imports: [
         BrowserModule,
