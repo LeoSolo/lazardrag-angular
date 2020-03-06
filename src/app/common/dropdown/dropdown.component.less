@@ -2,20 +2,27 @@
 
 .dropdown-field {
   position: relative;
-  padding-left: @defaultPadding;
-  line-height: 34px;
+  padding-left: 8px;
+  display: flex;
+  align-items: center;
   color: #333333;
   border-radius: 3px;
   resize: none;
   width: 100%;
   border: 1px solid #e4e4e4;
   height: 34px;
+  padding-bottom: 2px;
+  font-size: .8em;
+
+  &.empty {
+    color: #696969;
+  }
 
   &::after {
     content: '';
     display: block;
     position: absolute;
-    top: 14px;
+    top: 12px;
     right: @defaultPadding;
     transform: rotate(90deg);
     width: 16px;
@@ -27,7 +34,7 @@
   &+.dropdown-options {
     display: none;
     position: absolute;
-    top: 62px;
+    top: 56px;
     left: 0;
     width: 100%;
     background: #ffffff;

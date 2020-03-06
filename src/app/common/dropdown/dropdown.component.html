@@ -1,5 +1,8 @@
 <div
-  [ngClass]="['dropdown-field', isOpened ? 'opened' : '']"
+  [ngClass]="[
+  'dropdown-field', isOpened ? 'opened' : '',
+  !chosenOption ? 'empty' : ''
+  ]"
   (click)="dropdownOpen()">
 
   {{chosenOption || 'Выберите тип'}}
