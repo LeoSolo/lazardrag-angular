@@ -31,9 +31,8 @@ export class CreateProductModalComponent implements OnInit {
   }
 
   async onSubmit() {
-    console.log('submitted');
-    console.log(this.productForm);
-    this.createProduct();
+    await this.createProduct();
+    this.cancel.emit();
   }
 
   onCancel() {
