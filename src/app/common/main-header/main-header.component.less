@@ -21,20 +21,29 @@
     flex-wrap: nowrap;
     padding: 26px 0;
 
-    img {
-      position: relative;
-      width: 100px;
-      height: 100%;
-      margin-right: @defaultPadding;
+    a {
+      color: #ffffff;
+      display: flex;
+
+      img {
+        position: relative;
+        width: 100px;
+        height: 100%;
+        margin-right: @defaultPadding;
+        pointer-events: none;
+      }
+
+      h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: kurale;
+        font-size: 2.4em;
+        color: #ffffff;
+        pointer-events: none;
+      }
     }
 
-    h1 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: kurale;
-      font-size: 2.4em;
-      color: #ffffff;
-    }
+
   }
 }

@@ -1,0 +1,12 @@
+<div
+  [ngClass]="['dropdown-field', isOpened ? 'opened' : '']"
+  (click)="dropdownOpen()">
+
+  {{chosenOption || 'Выберите тип'}}
+</div>
+
+<ul class="dropdown-options" #dropdownList>
+  <li *ngFor="let option of options;" (click)="setChosenOption(option)">
+    {{option}}
+  </li>
+</ul>

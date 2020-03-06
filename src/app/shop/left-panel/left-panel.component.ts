@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeftPanelComponent implements OnInit {
 
+  filter: number = null;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  accordionTrigger() {
+
   }
 
 }

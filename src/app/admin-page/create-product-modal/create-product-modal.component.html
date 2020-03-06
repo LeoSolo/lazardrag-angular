@@ -1,0 +1,62 @@
+<div class="shadow-block">
+
+  <div class="modal-container">
+    <i class="icon btn closeBtn" (click)="onCancel()"></i>
+
+    <h4>Создать товар</h4>
+
+    <div class="inputs-container">
+
+      <form [formGroup]="productForm" (submit)="onSubmit()">
+
+        <label>
+          Название:
+          <input
+            type="text"
+            formControlName="title"
+            required="true"
+            placeholder="Введите название"
+          >
+        </label>
+
+        <label>
+          Описание:
+          <textarea
+            formControlName="description"
+            placeholder="Введите описание"
+            required="true">
+          </textarea>
+        </label>
+
+        <div class="half-inputs-container">
+          <label class="half-width">
+            Цена:
+            <input
+              type="number"
+              formControlName="price"
+              required="true"
+              placeholder="0.00">
+          </label>
+
+          <label class="half-width">
+            Тип:
+            <app-dropdown [options]="typesArr" (onChange)="changeType($event)"></app-dropdown>
+          </label>
+        </div>
+
+        <label>
+          Изображение:
+          <input formControlName="description" placeholder="Не работает" readonly>
+        </label>
+
+        <div class="btns-Container">
+          <button type="submit" class="btn save-btn">Сохранить</button>
+          <button class="btn cancel-btn" (click)="onCancel()">Отмена</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>

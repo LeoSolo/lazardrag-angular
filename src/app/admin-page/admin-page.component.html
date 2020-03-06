@@ -1,1 +1,12 @@
-<p>admin-page works!</p>
+<div class="page admin-page">
+
+  <button class="btn open-create-product-modal-btn" (click)="createProductModalTrigger()">
+    Новый товар
+  </button>
+
+</div>
+
+<app-create-product-modal
+  (cancel)="createProductModalTrigger()"
+  *ngIf="createProductModalShown">
+</app-create-product-modal>

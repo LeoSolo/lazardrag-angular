@@ -26,6 +26,7 @@ ul {
 a {
   color: #000000;
   text-decoration: none;
+
   &:hover {
     color: @hoveredLink;
     cursor: pointer;
@@ -39,19 +40,22 @@ section {
 
 button {
   background: #ffffff;
-  padding: @defaultPadding;
+  padding: @defaultPadding 20px;
   outline: none;
   border: 1px solid #e4e4e4;
   border-radius: 3px;
   color: #000000;
   font-weight: 800;
+
   &:hover {
     cursor: pointer;
     background: #e4e4e4;
   }
+
   &.green {
     background: green;
     color: #ffffff;
+
     &:hover {
       background: #4dee41;
     }
@@ -59,7 +63,7 @@ button {
 }
 
 .page {
-  padding: calc(@defaultPadding*3) 56px;
+  padding: calc(@defaultPadding * 3) 56px;
 }
 
 .hidden {
@@ -72,6 +76,49 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,.4);
+  background: rgba(0, 0, 0, .4);
   z-index: 9999;
+}
+
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 0;
+}
+
+::-webkit-scrollbar-button {
+  width: 5px;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border: 0 none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333333;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #333333;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 0 none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
 }

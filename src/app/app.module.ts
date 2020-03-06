@@ -15,6 +15,10 @@ import { LoaderComponent } from './common/loader/loader.component';
 import { SliderComponent } from './common/slider/slider.component';
 import { SearchComponent } from './common/main-header/main-menu/search/search.component';
 import { LeftPanelComponent } from './shop/left-panel/left-panel.component';
+import { CreateProductModalComponent } from './admin-page/create-product-modal/create-product-modal.component';
+import { ModalComponent } from './common/modal/modal.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DropdownComponent } from './common/dropdown/dropdown.component';
 
 @NgModule({
     declarations: [
@@ -30,12 +34,17 @@ import { LeftPanelComponent } from './shop/left-panel/left-panel.component';
         LoaderComponent,
         SliderComponent,
         SearchComponent,
-        LeftPanelComponent
+        LeftPanelComponent,
+        CreateProductModalComponent,
+        ModalComponent,
+        DropdownComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        HttpClientModule
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

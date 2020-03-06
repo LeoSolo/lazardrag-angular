@@ -1,5 +1,5 @@
 import {IProduct} from "../models/IProduct";
-import {Component, Injectable, NgModule} from "@angular/core";
+import {Injectable} from "@angular/core";
 import {ApiHelper} from "../Helpers/api/api.helper";
 
 @Injectable({
@@ -7,8 +7,6 @@ import {ApiHelper} from "../Helpers/api/api.helper";
 })
 
 export class ProductsService {
-
-  // private products: IProduct[] = [];
 
   constructor(
     private apiHelper: ApiHelper
@@ -19,10 +17,8 @@ export class ProductsService {
       .then(response => response.json())
   }
 
-  // addProduct(product: IProduct){
-  //   this.products.push(product);
-  // }
-
-  // editProduct(product: IProduct){}
+  async createProduct(body) {
+    return await this.apiHelper.postData('PRODUCTS', body)
+  }
 
 }
