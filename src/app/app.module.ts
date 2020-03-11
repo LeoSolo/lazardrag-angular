@@ -19,6 +19,7 @@ import { CreateProductModalComponent } from './admin-page/create-product-modal/c
 import { ModalComponent } from './common/modal/modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropdownComponent } from './common/dropdown/dropdown.component';
+import { AdminProductsTableComponent } from './admin-page/admin-products-table/admin-products-table.component';
 
 @NgModule({
     declarations: [
@@ -37,7 +38,8 @@ import { DropdownComponent } from './common/dropdown/dropdown.component';
         LeftPanelComponent,
         CreateProductModalComponent,
         ModalComponent,
-        DropdownComponent
+        DropdownComponent,
+        AdminProductsTableComponent
     ],
     imports: [
         BrowserModule,

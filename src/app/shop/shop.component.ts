@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductsService} from "../../services/products.service";
 import {IProduct} from "../../models/IProduct";
+import {productTypesEnum} from "../../models/ProductTypesEnum";
 
 @Component({
   selector: 'app-shop',
@@ -13,6 +14,8 @@ export class ShopComponent implements OnInit {
 
   products: IProduct[] = [];
   loading: boolean = true;
+  typeFilter: number = null;
+  subTypeFilter: number = null;
 
   constructor(private productService: ProductsService) { }
 
@@ -20,12 +23,22 @@ export class ShopComponent implements OnInit {
     this.getProductsList();
   }
 
-  async getProductsList() {
-    this.products = await this.productService.getProducts()
+  async getProductsList(type?) {
+    this.products = await this.productService.getProducts(type ? 'type=' + type : null)
       .then(res => {
         this.loading = false;
-        return res;
+        return (this.subTypeFilter || this.subTypeFilter === 0) ?
+          res.filter(product => product.subType === this.subTypeFilter) : res;
       });
+  }
+
+  changeTypeFilter(value: number) {
+    this.typeFilter = value;
+    this.getProductsList(value.toString());
+  }
+
+  changeSubTypeFilter(value: number) {
+    this.subTypeFilter = value;
   }
 
 }

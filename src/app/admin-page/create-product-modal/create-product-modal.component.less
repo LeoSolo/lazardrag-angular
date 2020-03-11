@@ -38,7 +38,7 @@
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 20px 20px 100px 20px;
+    padding: 20px 20px 80px 20px;
 
     .half-inputs-container {
       position: relative;
@@ -54,6 +54,8 @@
       display: block;
       width: 100%;
       margin-bottom: @defaultPadding;
+      transition: opacity 150ms linear;
+      opacity: 1;
 
       &.half-width {
         width: 48%;
@@ -81,6 +83,17 @@
 
         &:focus {
           border: 1px solid @dark;
+        }
+      }
+
+      &.disabled {
+        pointer-events: none;
+        opacity: .4;
+      }
+
+      &.error {
+        input, textarea {
+          border-color: red;
         }
       }
     }

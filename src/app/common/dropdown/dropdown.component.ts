@@ -11,6 +11,8 @@ import {Component, OnInit, Input, Output, ViewChild, ElementRef, EventEmitter} f
 export class DropdownComponent implements OnInit {
 
   @Input() options: string[];
+  @Input() placeholder: string;
+  @Input() error: boolean = false;
   @Output() onChange: EventEmitter<string> = new EventEmitter<string>();
   @ViewChild("dropdownList", {static: false}) dropdownList: ElementRef;
   chosenOption: string;

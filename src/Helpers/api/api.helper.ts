@@ -8,11 +8,13 @@ import {Injectable} from "@angular/core";
 export class ApiHelper{
 
   public async getData(direction, params?) {
-    return await fetch(URLS.API.API + URLS.API[direction], params);
+    let url = URLS.API.API + URLS.API[direction];
+    params ? url = url + '?' + params : null;
+    return await fetch(url);
   }
 
   public async postData(direction, body) {
-    return await fetch(URLS.API.API + URLS.API[direction],{
+    return await fetch((URLS.API.API + URLS.API[direction]).split('/search')[0],{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8'

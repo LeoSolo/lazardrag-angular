@@ -1,81 +1,19 @@
 <div class="left-panel-container">
 
   <ul class="top-level-filters-list">
-    <li>
-      <h4>
-        Браслеты
+    <li *ngFor="let title of titles; index as num;">
+      <h4 (click)="setMainFilter(title)">
+        {{title}}
         <i class="btn arrowBtn opened" (click)="accordionTrigger()"></i>
       </h4>
-      <ul class="second-level-filters-list">
-        <li>Женские</li>
-        <li>Мужские</li>
-        <li>Детские</li>
-        <li>Игры</li>
-        <li>Аниме</li>
-      </ul>
-    </li>
 
-    <li>
-      <h4>
-        Рюкзаки/Сумки
-        <i class="btn arrowBtn"></i>
-      </h4>
       <ul class="second-level-filters-list">
-        <li>Женские</li>
-        <li>Мужские</li>
-        <li>Детские</li>
+        <li *ngFor="let subTitle of subTitles[num]"
+            (click)="setSubFilter(title, subTitle)">
+          {{subTitle}}
+        </li>
       </ul>
-    </li>
 
-    <li>
-      <h4>
-        Кулоны
-        <i class="btn arrowBtn"></i>
-      </h4>
-      <ul class="second-level-filters-list">
-        <li>Игры</li>
-        <li>Аниме</li>
-      </ul>
-    </li>
-
-    <li>
-      <h4>
-        Аксессуары для девушек
-        <i class="btn arrowBtn"></i>
-      </h4>
-      <ul class="second-level-filters-list">
-        <li>Заколки для волос</li>
-        <li>Повязки на голову</li>
-        <li>Чокеры</li>
-        <li>Портупеи</li>
-        <li>Маски</li>
-      </ul>
-    </li>
-
-    <li>
-      <h4>
-        Индивидуальный дизайн
-        <i class="btn arrowBtn"></i>
-      </h4>
-      <ul class="second-level-filters-list">
-        <li>Чехлы на телефон</li>
-        <li>Обложки на документы</li>
-        <li>Сумки</li>
-        <li>Ремни</li>
-        <li>Кисеты</li>
-        <li>Руны</li>
-      </ul>
-    </li>
-
-    <li>
-      <h4>
-        Кошельки
-        <i class="btn arrowBtn"></i>
-      </h4>
-      <ul class="second-level-filters-list">
-        <li>Портмоне</li>
-        <li>Компактные</li>
-      </ul>
     </li>
   </ul>
 

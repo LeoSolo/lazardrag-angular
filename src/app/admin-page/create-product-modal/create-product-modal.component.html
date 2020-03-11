@@ -9,7 +9,7 @@
 
       <form [formGroup]="productForm" (submit)="onSubmit()">
 
-        <label>
+        <label [ngClass]="[form.title.errors && submitted ? 'error' : '']">
           Название:
           <input
             type="text"
@@ -23,13 +23,12 @@
           Описание:
           <textarea
             formControlName="description"
-            placeholder="Введите описание"
-            required="true">
+            placeholder="Введите описание">
           </textarea>
         </label>
 
         <div class="half-inputs-container">
-          <label class="half-width">
+          <label [ngClass]="['half-width', form.price.errors && submitted ? 'error' : '']">
             Цена:
             <input
               type="number"
@@ -38,9 +37,37 @@
               placeholder="0.00">
           </label>
 
-          <label class="half-width">
+          <label [ngClass]="['half-width']">
             Тип:
-            <app-dropdown [options]="typesArr" (onChange)="changeType($event)"></app-dropdown>
+            <app-dropdown
+              [options]="typesArr"
+              (onChange)="changeType($event)"
+              [error]="form.type.errors && submitted"
+              placeholder="Выберите тип">
+            </app-dropdown>
+          </label>
+        </div>
+
+        <div class="half-inputs-container">
+          <label class="half-width">
+            Размеры:
+            <input
+              type="text"
+              formControlName="size"
+              placeholder="Введите размеры">
+          </label>
+
+          <label class="half-width" [ngClass]="[
+            'half-width',
+            subTypesArr.length ? '' : 'disabled'
+          ]">
+            Подтип:
+            <app-dropdown
+              [options]="subTypesArr"
+              (onChange)="changeSubType($event)"
+              [error]="form.subType.errors && submitted"
+              placeholder="Выберите подтип">
+            </app-dropdown>
           </label>
         </div>
 

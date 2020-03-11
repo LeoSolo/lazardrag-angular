@@ -28,28 +28,23 @@ namespace backend.Controllers
                 Description = product.Description,
                 Price = product.Price,
                 Image = product.Image,
-                Type = product.Type
+                Type = product.Type,
+                SubType = product.SubType,
+                Size = product.Size
             });
             _dataContext.SaveChanges();
         }
         
-        [HttpGet]
-        public IEnumerable<Models.Products.Product> GetList()
+        [HttpGet("search")]
+        public IEnumerable<Models.Products.Product> GetList(int? type)
         {
-            return _dataContext.Products.ToList();
+            return _dataContext.Products.Where(product => product.Type == type || type == null).ToList();
         }
 
         [HttpGet("{id}")]
         public Product GetProduct(long id)
         {
-            return new Product() {
-                Id = id,
-                Title = "Product 1",
-                Description = "Description of product 1",
-                Price = 9.99M,
-                Image = "",
-                Type = 1
-            };
+            return _dataContext.Products.FirstOrDefault(product => product.Id == id);
         }
     }
 }

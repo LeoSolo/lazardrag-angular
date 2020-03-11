@@ -12,8 +12,8 @@ export class ProductsService {
     private apiHelper: ApiHelper
   ){}
 
-  async getProducts(): Promise<IProduct[]> {
-    return await this.apiHelper.getData('PRODUCTS')
+  async getProducts(params?): Promise<IProduct[]> {
+    return await this.apiHelper.getData('PRODUCTS', params)
       .then(response => response.json())
   }
 

@@ -8,5 +8,7 @@ namespace Models.Products
         public decimal Price { get; set; }
         public string Image { get; set; }
         public int Type { get; set; }
+        public int SubType { get; set; }
+        public string Size { get; set; }
     }
 }

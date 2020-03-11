@@ -1,0 +1,21 @@
+@import "~src/conts";
+
+.admin-products-table-container {
+  position: relative;
+  display: grid;
+  margin-top: 20px;
+  width: 98%;
+  height: auto;
+  grid-template-columns: 1fr 4fr 6fr 4fr 4fr 2fr 2fr 1fr;
+
+  .col-title {
+    padding: @defaultPadding;
+    border: 1px solid #e3e3e3;
+    border-left: none;
+    font-size: .9em;
+
+    &:first-child {
+      border-left: 1px solid #e3e3e3;
+    }
+  }
+}

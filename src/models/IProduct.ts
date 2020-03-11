@@ -4,5 +4,7 @@ export interface IProduct {
     image: string;
     price: number;
     description: string;
-    types: number[];
+    type: number;
+    subType: number;
+    size: string;
 }

@@ -1,5 +1,5 @@
 <div class="shop-container">
-  <app-left-panel></app-left-panel>
+  <app-left-panel (filter)="changeTypeFilter($event)" (subFilter)="changeSubTypeFilter($event)"></app-left-panel>
 
   <app-loader *ngIf="loading"></app-loader>
 
@@ -8,6 +8,7 @@
       {{product.title}}
       {{product.description}}
       {{product.price}} $
+      {{product.subType}}
     </li>
   </ul>
 
