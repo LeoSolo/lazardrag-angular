@@ -34,7 +34,7 @@ export class ShopComponent implements OnInit {
 
   changeTypeFilter(value: number) {
     this.typeFilter = value;
-    this.getProductsList(value.toString());
+    value || value === 0 ? this.getProductsList(value.toString()) : this.getProductsList();
   }
 
   changeSubTypeFilter(value: number) {

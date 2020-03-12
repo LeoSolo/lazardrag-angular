@@ -12,6 +12,26 @@
     li {
       position: relative;
       margin-bottom: 8px;
+      padding: 0;
+
+      &.top-level-li {
+        height: 38px;
+        overflow: hidden;
+        transition: 300ms linear;
+      }
+
+      &.opened {
+        height: auto;
+        .arrowBtn {
+          transform: rotate(-90deg);
+        }
+      }
+
+      &.active {
+        h4 {
+          color: @hoveredLink;
+        }
+      }
 
       h4 {
         position: relative;
@@ -34,10 +54,6 @@
         background: url("~src/assets/icons/arrow-dark.svg") center center no-repeat;
         background-size: contain;
         transform: rotate(90deg);
-
-        &.opened {
-          transform: rotate(-90deg);
-        }
       }
 
       .second-level-filters-list {
@@ -47,6 +63,10 @@
           &:hover {
             color: @hoveredLink;
             cursor: pointer;
+          }
+
+          &.active {
+            color: @hoveredLink;
           }
 
         }

@@ -1,14 +1,28 @@
 @import "~src/conts";
 
+.choose-products-type {
+  position: relative;
+  display: block;
+  width: 200px;
+  margin-top: 20px;
+  font-size: .9em;
+}
+
 .admin-products-table-container {
   position: relative;
-  display: grid;
   margin-top: 20px;
-  width: 98%;
+  width: 100%;
   height: auto;
-  grid-template-columns: 1fr 4fr 6fr 4fr 4fr 2fr 2fr 1fr;
 
-  .col-title {
+  header {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr 6fr 8fr 4fr 4fr 2fr 2fr;
+  }
+
+  .row {
     padding: @defaultPadding;
     border: 1px solid #e3e3e3;
     border-left: none;
@@ -16,6 +30,29 @@
 
     &:first-child {
       border-left: 1px solid #e3e3e3;
+    }
+  }
+
+  .row-data {
+    border-top: none;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 6fr 8fr 4fr 4fr 2fr 2fr;
+    border-left: 1px solid #e3e3e3;
+
+    &:hover {
+      background: #e3e3e3;
+      cursor: pointer;
+    }
+
+    .cell {
+      position: relative;
+      height: 100%;
+      padding: @defaultPadding;
+      border: 1px solid #e3e3e3;
+      border-left: none;
+      border-top: none;
+      font-size: .8em;
     }
   }
 }

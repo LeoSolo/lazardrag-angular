@@ -13,6 +13,8 @@ export class DropdownComponent implements OnInit {
   @Input() options: string[];
   @Input() placeholder: string;
   @Input() error: boolean = false;
+  @Input() value: string;
+
   @Output() onChange: EventEmitter<string> = new EventEmitter<string>();
   @ViewChild("dropdownList", {static: false}) dropdownList: ElementRef;
   chosenOption: string;
@@ -21,6 +23,7 @@ export class DropdownComponent implements OnInit {
   constructor(private _eref: ElementRef) { }
 
   ngOnInit() {
+    this.value ? this.chosenOption = this.value : null;
   }
 
   onClick(event) {

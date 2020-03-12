@@ -1,6 +1,26 @@
+<label class="choose-products-type">
+  Выберите тип:
+  <app-dropdown
+    [options]="typesArr"
+    [value]="typesArr[chosenType]"
+    (onChange)="changeType($event)">
+  </app-dropdown>
+</label>
+
 <div class="admin-products-table-container">
 
-  <div *ngFor="let col of cols;" class="col-title">{{col}}</div>
-  <div class="col-title">...</div>
+  <header>
+    <div *ngFor="let col of cols;" class="row-title row">{{col}}</div>
+  </header>
+
+  <div *ngFor="let product of products; index as num;" class="row-data" (click)="editModalTrigger()">
+    <div class="cell">{{product.id}}</div>
+    <div class="cell">{{product.title || '-'}}</div>
+    <div class="cell">{{product.description || '-'}}</div>
+    <div class="cell">{{productTypesEnum[product.type] || '-'}}</div>
+    <div class="cell">{{productSubTypes[product.type][product.subType] || '-'}}</div>
+    <div class="cell">{{product.price || '-'}}</div>
+    <div class="cell">{{product.image || '-'}}</div>
+  </div>
 
 </div>
