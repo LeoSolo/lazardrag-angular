@@ -85,4 +85,10 @@ export class CreateProductModalComponent implements OnInit {
     await this.productService.createProduct(this.productForm.value);
   }
 
+  onLoadImage(imageBase64: string) {
+    this.productForm.patchValue({
+      image: imageBase64
+    });
+  }
+
 }

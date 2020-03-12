@@ -1,0 +1,5 @@
+<label>
+  Загрузить фото:
+  <input type="file" placeholder="Загрузить изображение" (change)="loadImage($event)">
+  <img src="#" alt="" #img [ngClass]="[imageUrl ? 'visible' : 'hidden']"/>
+</label>

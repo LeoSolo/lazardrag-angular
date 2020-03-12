@@ -71,10 +71,11 @@
           </label>
         </div>
 
-        <label>
-          Изображение:
-          <input formControlName="description" placeholder="Не работает" readonly>
-        </label>
+<!--        <label>-->
+<!--          Изображение:-->
+<!--          <input formControlName="description" placeholder="Не работает" readonly>-->
+<!--        </label>-->
+        <app-image-loader (onLoadImage)="onLoadImage($event)"></app-image-loader>
 
         <div class="btns-Container">
           <button type="submit" class="btn save-btn">Сохранить</button>

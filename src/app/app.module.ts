@@ -20,6 +20,7 @@ import { ModalComponent } from './common/modal/modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropdownComponent } from './common/dropdown/dropdown.component';
 import { AdminProductsTableComponent } from './admin-page/admin-products-table/admin-products-table.component';
+import { ImageLoaderComponent } from './common/image-loader/image-loader.component';
 
 @NgModule({
     declarations: [
@@ -39,7 +40,8 @@ import { AdminProductsTableComponent } from './admin-page/admin-products-table/a
         CreateProductModalComponent,
         ModalComponent,
         DropdownComponent,
-        AdminProductsTableComponent
+        AdminProductsTableComponent,
+        ImageLoaderComponent
     ],
     imports: [
         BrowserModule,
