@@ -30,7 +30,8 @@ namespace backend.Controllers
                 Image = product.Image,
                 Type = product.Type,
                 SubType = product.SubType,
-                Size = product.Size
+                Size = product.Size,
+                IsDeleted = product.IsDeleted
             });
             _dataContext.SaveChanges();
         }
@@ -38,13 +39,29 @@ namespace backend.Controllers
         [HttpGet("search")]
         public IEnumerable<Models.Products.Product> GetList(int? type)
         {
-            return _dataContext.Products.Where(product => product.Type == type || type == null).ToList();
+            return _dataContext.Products.Where(product => (product.Type == type || type == null) && !product.IsDeleted).ToList();
         }
 
         [HttpGet("{id}")]
         public Product GetProduct(long id)
         {
             return _dataContext.Products.FirstOrDefault(product => product.Id == id);
+        }
+
+        [HttpPut]
+        public void Put([FromBody]Product product)
+        {
+            _dataContext.Update(product);
+            _dataContext.SaveChanges();
+        }
+
+        [HttpDelete("{id}")]
+        public void Delete(long id)
+        {
+            Product product = _dataContext.Products.Where(product => product.Id == id).FirstOrDefault();
+            product.IsDeleted = true;
+            _dataContext.Update(product);
+            _dataContext.SaveChanges();
         }
     }
 }

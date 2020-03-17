@@ -17,6 +17,11 @@ export class ProductsService {
       .then(response => response.json())
   }
 
+  async getProduct(params?): Promise<IProduct> {
+    return await this.apiHelper.getItemById('PRODUCTS', params)
+      .then(response => response.json())
+  }
+
   async createProduct(body) {
     return await this.apiHelper.postData('PRODUCTS', body)
   }

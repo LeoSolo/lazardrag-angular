@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-main-menu',
@@ -7,13 +8,26 @@ import {Location} from '@angular/common';
     styleUrls: ['./main-menu.component.less']
 })
 export class MainMenuComponent implements OnInit {
-    isAdminPage = false;
+    isAdminPage: boolean = false;
 
-    constructor(private location: Location) {
+    constructor(private location: Location, private router: Router) {
     }
 
     ngOnInit() {
-        this.isAdminPage = this.location.path().toString() === '/admin';
+      this.checkIsAdminPage();
+    }
+
+    link() {
+
+    }
+
+    checkIsAdminPage() {
+      this.isAdminPage = this.location.path().toString() === '/admin';
+    }
+
+    quitAdminPanel() {
+      this.router.navigate(['']);
+      return false;
     }
 
 }

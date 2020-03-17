@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductsService} from "../../services/products.service";
 import {IProduct} from "../../models/IProduct";
-import {productTypesEnum} from "../../models/ProductTypesEnum";
+import { Router, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-shop',
@@ -17,19 +17,19 @@ export class ShopComponent implements OnInit {
   typeFilter: number = null;
   subTypeFilter: number = null;
 
-  constructor(private productService: ProductsService) { }
+  constructor(private productService: ProductsService, private router: Router) { }
 
   async ngOnInit() {
     this.getProductsList();
   }
 
   async getProductsList(type?) {
-    this.products = await this.productService.getProducts(type ? 'type=' + type : null)
+    this.checkImg(await this.productService.getProducts(type ? 'type=' + type : null)
       .then(res => {
         this.loading = false;
         return (this.subTypeFilter || this.subTypeFilter === 0) ?
           res.filter(product => product.subType === this.subTypeFilter) : res;
-      });
+      }));
   }
 
   changeTypeFilter(value: number) {
@@ -39,6 +39,18 @@ export class ShopComponent implements OnInit {
 
   changeSubTypeFilter(value: number) {
     this.subTypeFilter = value;
+  }
+
+  checkImg(list) {        // TODO Delete on prod. Test for empty imgs
+    for(let i = 0; i < list.length; i++) {
+       !list[i].image.length && (list[i].image = 'assets/images/test-bracer.jpg');
+    }
+
+    this.products = list;
+  }
+
+  goToCard(id) {
+    this.router.navigate(['/card/' + id]);
   }
 
 }

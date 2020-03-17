@@ -10,5 +10,6 @@ namespace Models.Products
         public int Type { get; set; }
         public int SubType { get; set; }
         public string Size { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

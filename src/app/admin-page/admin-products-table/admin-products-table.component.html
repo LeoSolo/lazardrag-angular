@@ -19,7 +19,7 @@
     <div class="cell">{{product.description || '-'}}</div>
     <div class="cell">{{productTypesEnum[product.type] || '-'}}</div>
     <div class="cell">{{productSubTypes[product.type][product.subType] || '-'}}</div>
-    <div class="cell">{{product.price || '-'}}</div>
+    <div class="cell">{{product.price + ' руб.' || '-'}}</div>
     <div class="cell">{{product.image ? 'Есть' : 'Нет'}}</div>
   </div>
 

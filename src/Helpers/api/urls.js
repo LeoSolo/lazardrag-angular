@@ -8,7 +8,8 @@ export const URLS = {
     PRODUCTS: 'products/search/',
     NEWS: 'news/',
     SLIDES: 'slides/'
-  }
+  },
+  WEBSITE: 'http://localhost:4200/'
 };
 
 export default URLS;

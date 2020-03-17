@@ -3,12 +3,16 @@
 
   <app-loader *ngIf="loading"></app-loader>
 
-  <ul class="products-list" *ngIf="products.length && !loading">
-    <li *ngFor="let product of products">
-      {{product.title}}
-      {{product.description}}
-      {{product.price}} $
-      {{product.subType}}
+  <ul *ngIf="products.length && !loading" [ngClass]="['products-list', products.length <= 3 ? 'few-products' : '']">
+    <li class="product" *ngFor="let product of products" (click)="goToCard(product.id)">
+      <div class="img-container">
+        <img [src]="product.image" alt="">
+      </div>
+      <div class="description">{{product.description}}</div>
+      <div class="title">{{product.title}}</div>
+      <div class="price">{{product.price}} руб</div>
+
+      <button class="more-btn">Подробнее</button>
     </li>
   </ul>
 

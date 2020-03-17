@@ -13,6 +13,11 @@ export class ApiHelper{
     return await fetch(url);
   }
 
+  public async getItemById(direction, id) {
+    let url = (URLS.API.API + URLS.API[direction]).split('/search')[0] + '/' + id;
+    return await fetch(url);
+  }
+
   public async postData(direction, body) {
     return await fetch((URLS.API.API + URLS.API[direction]).split('/search')[0],{
       method: 'POST',

@@ -1,0 +1,16 @@
+
+<a href="#" (click)="goBack()"><< Вернуться назад</a>
+
+<p>Ответом на запрос стал объект со следующими данными:</p>
+
+<ul *ngIf="product">
+  <li>ID - {{product.id}}</li>
+  <li>Заголовок - {{product.title}}</li>
+  <li>Описание - {{product.description}}</li>
+  <li>Цена - {{product.price}}</li>
+  <li>Картинка - {{product.image ? 'есть, не выводим из-за длины, просто поставить в src' : 'нема'}}</li>
+  <li>Размер - {{product.size}}</li>
+  <li>Тип - {{productTypesEnum[product.type]}}</li>
+  <li>Подтип - {{productSubTypes[product.type][product.subType]}}</li>
+</ul>
+
