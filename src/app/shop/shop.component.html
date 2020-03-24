@@ -1,8 +1,6 @@
 <div class="shop-container">
   <app-left-panel (filter)="changeTypeFilter($event)" (subFilter)="changeSubTypeFilter($event)"></app-left-panel>
 
-  <app-loader *ngIf="loading"></app-loader>
-
   <ul *ngIf="products.length && !loading" [ngClass]="['products-list', products.length <= 3 ? 'few-products' : '']">
     <li class="product" *ngFor="let product of products" (click)="goToCard(product.id)">
       <div class="img-container">

@@ -23,7 +23,7 @@ export class DropdownComponent implements OnInit {
   constructor(private _eref: ElementRef) { }
 
   ngOnInit() {
-    this.value ? this.chosenOption = this.value : null;
+    if (this.value) this.chosenOption = this.value;
   }
 
   onClick(event) {

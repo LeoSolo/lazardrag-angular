@@ -3,11 +3,11 @@
   <div class="modal-container">
     <i class="icon btn closeBtn" (click)="onCancel()"></i>
 
-    <h4>Создать товар</h4>
+    <h4>{{isEdit ? 'Редактировать ' : 'Создать ' }}товар</h4>
 
     <div class="inputs-container">
 
-      <form [formGroup]="productForm" (submit)="onSubmit()">
+      <form [formGroup]="productForm" (submit)="onSubmit($event)">
 
         <label [ngClass]="[form.title.errors && submitted ? 'error' : '']">
           Название:
@@ -43,6 +43,7 @@
               [options]="typesArr"
               (onChange)="changeType($event)"
               [error]="form.type.errors && submitted"
+              [value]="product ? productTypesEnum[product.type] : null"
               placeholder="Выберите тип">
             </app-dropdown>
           </label>
@@ -66,19 +67,19 @@
               [options]="subTypesArr"
               (onChange)="changeSubType($event)"
               [error]="form.subType.errors && submitted"
+              [value]="product ? productSubTypes[product.type][product.subType] : null"
               placeholder="Выберите подтип">
             </app-dropdown>
           </label>
         </div>
 
-<!--        <label>-->
-<!--          Изображение:-->
-<!--          <input formControlName="description" placeholder="Не работает" readonly>-->
-<!--        </label>-->
-        <app-image-loader (onLoadImage)="onLoadImage($event)"></app-image-loader>
+        <app-image-loader (onLoadImage)="onLoadImage($event)" [value]="product ? product.image : null">
+        </app-image-loader>
 
-        <div class="btns-Container">
-          <button type="submit" class="btn save-btn">Сохранить</button>
+        <div class="btns-container">
+          <button class="btn delete-btn" *ngIf="isEdit" (click)="confirmModalTrigger($event)">Удалить</button>
+
+          <button class="btn save-btn" (click)="onSubmit($event)">Сохранить</button>
           <button class="btn cancel-btn" (click)="onCancel()">Отмена</button>
         </div>
 
@@ -88,3 +89,10 @@
   </div>
 
 </div>
+
+<app-alert-modal
+  *ngIf="confirmModalShown"
+  text="Вы уверены, что хотите удалить этот товар?"
+  (onCancel)="confirmModalTrigger($event)"
+  (onConfirm)="deleteProduct()">
+</app-alert-modal>

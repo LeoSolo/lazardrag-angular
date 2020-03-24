@@ -1,4 +1,5 @@
-import {Component, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {IProduct} from "../../models/IProduct";
 
 @Component({
   selector: 'app-admin-page',
@@ -9,13 +10,15 @@ import {Component, OnInit, Output} from '@angular/core';
 export class AdminPageComponent implements OnInit {
 
   createProductModalShown: boolean = false;
+  product: IProduct = null;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  createProductModalTrigger() {
+  createProductModalTrigger(product) {
+    product ? this.product = product : this.product = null;
     this.createProductModalShown = !this.createProductModalShown;
   }
 }

@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {MainHeaderComponent} from './common/main-header/main-header.component';
@@ -22,6 +22,8 @@ import {DropdownComponent} from './common/dropdown/dropdown.component';
 import {AdminProductsTableComponent} from './admin-page/admin-products-table/admin-products-table.component';
 import {ImageLoaderComponent} from './common/image-loader/image-loader.component';
 import {ProductCardComponent} from './product-card/product-card.component';
+import { AlertModalComponent } from './common/alert-modal/alert-modal.component';
+import {LoaderInterceptorService} from "../services/loaderInterceptor.service";
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import {ProductCardComponent} from './product-card/product-card.component';
     DropdownComponent,
     AdminProductsTableComponent,
     ImageLoaderComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    AlertModalComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,13 @@ import {ProductCardComponent} from './product-card/product-card.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 

@@ -7,6 +7,7 @@ import {ProductsService} from "../../../services/products.service";
   templateUrl: './left-panel.component.html',
   styleUrls: ['./left-panel.component.less']
 })
+
 export class LeftPanelComponent implements OnInit {
 
   @Output() filter: EventEmitter<number> = new EventEmitter<number>();

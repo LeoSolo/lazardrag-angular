@@ -15,13 +15,14 @@
       padding: 0;
 
       &.top-level-li {
-        height: 38px;
-        overflow: hidden;
-        transition: 300ms linear;
+        //height: auto;
+        //max-height: 38px;
+        //overflow: hidden;
+        //transition: 300ms linear;
       }
 
       &.opened {
-        height: auto;
+        //max-height: 10000px;
         .arrowBtn {
           transform: rotate(-90deg);
         }
@@ -59,6 +60,24 @@
       .second-level-filters-list {
 
         li {
+          margin-top: 2px;
+          padding: 0 15px;
+          overflow: auto;
+          background: url("~src/assets/images/leather-menu.png") center center no-repeat;
+          background-size: cover;
+          color: #ffffff;
+          font-size: 1.2em;
+          font-weight: bold;
+          font-family: @niceFont;
+          border-radius: 6px;
+          box-shadow: inset 0 0 5px -1px #000;
+          transition: max-height .5s, padding .5s, color .2s;
+          max-height: 0;
+
+          &.shown {
+            max-height: 700px;
+            padding: 8px 16px;
+          }
 
           &:hover {
             color: @hoveredLink;

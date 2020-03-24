@@ -1,11 +1,20 @@
-<app-loader *ngIf="loading"></app-loader>
+<div class="page news-page">
+  <ul class="news-list" *ngIf="news.length && !loading">
+    <li *ngFor="let post of news">
+      <img src="../../assets/images/test-bracer.jpg" alt="">
 
-<ul class="news-list" *ngIf="news.length && !loading">
-  <li *ngFor="let post of news">
-    {{post.title}}
-    {{post.text}}
-  </li>
-</ul>
+      <div class="title">
+        {{post.title}}
+      </div>
 
-<div *ngIf="!news.length && !loading">Новостей нет :(</div>
+      <div class="text">
+        {{post.text}}
+      </div>
+
+      <div class="btn open-btn">Читать далее >></div>
+    </li>
+  </ul>
+
+  <div *ngIf="!news.length && !loading">Новостей нет :(</div>
+</div>
 

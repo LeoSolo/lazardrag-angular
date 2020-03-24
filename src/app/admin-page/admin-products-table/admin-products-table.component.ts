@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {productTypesEnum, productSubTypes} from '../../../models/ProductTypesEnum';
 import {ProductsService} from "../../../services/products.service";
 import {IProduct} from "../../../models/IProduct";
@@ -11,6 +11,7 @@ import {IProduct} from "../../../models/IProduct";
 })
 export class AdminProductsTableComponent implements OnInit {
 
+  @Output() edit: EventEmitter<IProduct> = new EventEmitter<IProduct>();
   cols: string[] = [
     '№', 'Заголовок', 'Описание', 'Тип', 'Подтип', 'Цена', 'Фото'
   ];
@@ -50,8 +51,8 @@ export class AdminProductsTableComponent implements OnInit {
       });
   }
 
-  editModalTrigger() {
-    console.log('editModalTrigger');
+  editModalTrigger(product) {
+    this.edit.emit(product);
   }
 
 }

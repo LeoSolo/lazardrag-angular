@@ -1,0 +1,44 @@
+@import "~src/conts";
+
+.modal-container {
+  width: 300px;
+  min-width: unset;
+
+  .modal-text {
+    padding: 0 20px;
+    margin-bottom: 60px;
+  }
+
+  .btns-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0 0 13px 13px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    padding: @defaultPadding 20px;
+
+    .cancel-btn {
+      background: #e3e3e3;
+      margin-left: 20px;
+      transition: background 150ms linear;
+
+      &:hover {
+        background: #f1f1f1;
+      }
+    }
+
+    .confirm-btn {
+      background: #59b50d;
+      color: #ffffff;
+      transition: background 150ms linear;
+
+      &:hover {
+        background: #62c50f;
+      }
+    }
+  }
+}

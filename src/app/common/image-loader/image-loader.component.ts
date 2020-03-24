@@ -1,13 +1,23 @@
-import {Component, OnInit, ElementRef, ViewChild, Output, EventEmitter} from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ElementRef,
+  ViewChild,
+  Output,
+  EventEmitter,
+  Input,
+  AfterContentChecked
+} from '@angular/core';
 
 @Component({
   selector: 'app-image-loader',
   templateUrl: './image-loader.component.html',
   styleUrls: ['./image-loader.component.less']
 })
-export class ImageLoaderComponent implements OnInit {
+export class ImageLoaderComponent implements OnInit, AfterContentChecked {
 
   @Output() onLoadImage: EventEmitter<string> = new EventEmitter<string>();
+  @Input() value: string;
   imageUrl: any = null;
   fileReader: FileReader;
   @ViewChild("img", {static: false}) img: ElementRef;
@@ -15,6 +25,13 @@ export class ImageLoaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngAfterContentChecked() {
+    if (this.value && this.img && !this.fileReader) {
+      this.imageUrl = this.value;
+      this.img.nativeElement.src = this.value;
+    }
   }
 
   loadImage(event) {

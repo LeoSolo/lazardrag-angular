@@ -13,7 +13,7 @@
     <div *ngFor="let col of cols;" class="row-title row">{{col}}</div>
   </header>
 
-  <div *ngFor="let product of products; index as num;" class="row-data" (click)="editModalTrigger()">
+  <div *ngFor="let product of products; index as num;" class="row-data" (click)="editModalTrigger(product)">
     <div class="cell">{{product.id}}</div>
     <div class="cell">{{product.title || '-'}}</div>
     <div class="cell">{{product.description || '-'}}</div>

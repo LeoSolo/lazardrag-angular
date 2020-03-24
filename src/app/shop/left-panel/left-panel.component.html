@@ -17,10 +17,13 @@
         <i class="btn arrowBtn opened" (click)="accordionTrigger(num)"></i>
       </h4>
 
-      <ul class="second-level-filters-list">
+      <ul class="second-level-filters-list" *ngIf="num === openedIndex">
         <li *ngFor="let subTitle of subTitles[num]"
             (click)="setSubFilter(title, subTitle)"
-            [ngClass]="[subTitle === sf ? 'active' : '']">
+            [ngClass]="[
+              subTitle === sf ? 'active' : '',
+              num === openedIndex ? 'shown' : ''
+            ]">
           {{subTitle}}
         </li>
       </ul>

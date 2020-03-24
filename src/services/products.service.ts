@@ -22,8 +22,16 @@ export class ProductsService {
       .then(response => response.json())
   }
 
+  async updateProduct(body) {
+    return await this.apiHelper.update('PRODUCTS', body)
+  }
+
   async createProduct(body) {
     return await this.apiHelper.postData('PRODUCTS', body)
+  }
+
+  async deleteProduct(id) {
+    return await this.apiHelper.delete('PRODUCTS', id)
   }
 
 }

@@ -27,6 +27,7 @@ export class MainMenuComponent implements OnInit {
 
     quitAdminPanel() {
       this.router.navigate(['']);
+      this.isAdminPage = false;
       return false;
     }
 

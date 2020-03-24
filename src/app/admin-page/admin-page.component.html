@@ -1,14 +1,15 @@
 <div class="page admin-page">
 
-  <button class="btn open-create-product-modal-btn" (click)="createProductModalTrigger()">
+  <button class="btn open-create-product-modal-btn" (click)="createProductModalTrigger(null)">
     Новый товар
   </button>
 
-  <app-admin-products-table></app-admin-products-table>
+  <app-admin-products-table (edit)="createProductModalTrigger($event)"></app-admin-products-table>
 
 </div>
 
 <app-create-product-modal
-  (cancel)="createProductModalTrigger()"
+  (cancel)="createProductModalTrigger(null)"
+  [product]="product"
   *ngIf="createProductModalShown">
 </app-create-product-modal>
