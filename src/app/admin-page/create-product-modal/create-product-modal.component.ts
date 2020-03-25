@@ -27,7 +27,14 @@ export class CreateProductModalComponent implements OnInit {
   constructor(private productService: ProductsService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    let tags = '';
     this.isEdit = !!this.product;
+
+    if (this.isEdit && this.product.tags) {
+      for (let i = 0; i < this.product.tags.length; i++) {
+        tags += ' ' + this.product.tags[i];
+      }
+    }
 
     this.productForm = this.formBuilder.group({
       title: this.isEdit ? [this.product.title, Validators.required] : [null, Validators.required],
@@ -36,7 +43,8 @@ export class CreateProductModalComponent implements OnInit {
       image: this.isEdit ? [this.product.image] : [''],
       price: this.isEdit ? [this.product.price, Validators.required] : [null, Validators.required],
       size: this.isEdit ? [this.product.size] : [''],
-      subType: this.isEdit ? [this.product.subType, Validators.required] : [null, Validators.required]
+      subType: this.isEdit ? [this.product.subType, Validators.required] : [null, Validators.required],
+      tags: tags.length ? [tags] : ['']
     });
 
     this.getTypes();
@@ -103,13 +111,15 @@ export class CreateProductModalComponent implements OnInit {
   }
 
   async createProduct() {
+    let product = this.productForm.value;
+    product.tags = [];
     await this.productService.createProduct(this.productForm.value);
   }
 
   async updateProduct() {
     let product = this.productForm.value;
     product.id = this.product.id;
-    await this.productService.updateProduct(this.productForm.value);
+    await this.productService.updateProduct(product);
   }
 
   onLoadImage(imageBase64: string) {

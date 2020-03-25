@@ -73,6 +73,14 @@
           </label>
         </div>
 
+        <label>
+          Теги(через пробел):
+          <textarea
+            formControlName="tags"
+            placeholder="Введите теги через пробел">
+          </textarea>
+        </label>
+
         <app-image-loader (onLoadImage)="onLoadImage($event)" [value]="product ? product.image : null">
         </app-image-loader>
 

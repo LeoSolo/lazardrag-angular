@@ -7,4 +7,5 @@ export interface IProduct {
     type: number;
     subType: number;
     size: string;
+    tags: string[];
 }
